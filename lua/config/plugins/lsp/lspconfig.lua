@@ -95,7 +95,7 @@ return {
 					"--all-scopes-completion",
 					"--pch-storage=memory",
 					"--function-arg-placeholders",
-					"--query-driver=C:\\msys64\\ucrt64\\bin\\gcc.exe,C:\\msys64\\ucrt64\\bin\\g++.exe",
+					"--query-driver=/usr/bin/gcc,/usr/bin/g++",
 				},
 				init_options = {
 					clangdFileStatus = true,
