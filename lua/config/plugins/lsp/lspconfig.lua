@@ -111,7 +111,6 @@ return {
 					client.server_capabilities.documentRangeFormattingProvider = false
 					on_attach(client, bufnr)
 				end,
-				cmd = { "intelephense.cmd", "--stdio" },
 				root_dir = util.root_pattern("composer.json", ".git"),
 			})
 
@@ -156,6 +155,12 @@ return {
 
 				-- }
 			})
+			lspconfig.bashls.setup({
+			    capabilities = capabilities,
+			    filetypes = {"sh", "bash"},
+			    cmd = {"bash-language-server", "start"},
+			})
+
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,

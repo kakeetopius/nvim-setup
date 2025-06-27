@@ -55,3 +55,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
       vim.bo.expandtab = true       -- Convert tabs to spaces
     end,
   })
+
+-- Make nvim recognise some files as shell
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile"},
+  callback = function()
+    vim.bo.filetype = "sh"
+  end,
+})
+
