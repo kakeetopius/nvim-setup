@@ -21,7 +21,6 @@ return {
             },
             sections = {
                 lualine_b = {'branch', 'diagnostics', 'diff'},
-                lualine_c = { 'filename' },
                 --lualine_x = { 'encoding','fileformat','filetype' },
                 lualine_x = {'filetype'},
                 lualine_y = { 'progress' },  -- Shows scroll percentage like 33%
@@ -40,26 +39,6 @@ return {
         end,
    },
 
-      
-    {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("nvim-tree").setup({
-                view = {
-                    width = 25,
-                    side = "left",
-                },
-                renderer = {
-                    group_empty = true,
-                },
-                filters = {
-                    dotfiles = false,
-                },
-            })
-        end,
-    },
-    
     -- For function signatures
     {
         "ray-x/lsp_signature.nvim",

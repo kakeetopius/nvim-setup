@@ -26,22 +26,7 @@ return {
     				require("nvim-navic").attach(client, bufnr)
   				end
 
-				-- LSP Keymaps
-				opts.desc = "Show LSP references"
-				keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-
-				opts.desc = "Go to declaration"
-				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-
-				opts.desc = "Show LSP definitions"
-				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-
-				opts.desc = "Show LSP implementations"
-				keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
-
-				opts.desc = "Show LSP type definitions"
-				keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-
+				-- LSP Keymaps Extras (Most provided by snacks)
 				opts.desc = "Show available code actions"
 				keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
@@ -50,16 +35,6 @@ return {
 
 				opts.desc = "Show buffer diagnostics"
 				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-
-				opts.desc = "Show line diagnostics"
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
-				opts.desc = "Go to previous diagnostic"
-				keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-
-				opts.desc = "Go to next diagnostic"
-				keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-
 				opts.desc = "Show documentation for what is under cursor"
 				keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
@@ -144,17 +119,6 @@ return {
 				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 			})
 
-			lspconfig.sqls.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				-- connections = {
-        		-- 	{
-          		-- 		driver = "mysql",
-          		-- 		dataSourceName = "pius:Kapila.707403@tcp(localhost:3306)/ecommerce",
-        		-- 	},
-
-				-- }
-			})
 			lspconfig.bashls.setup({
 			    capabilities = capabilities,
 			    filetypes = {"sh", "bash"},
