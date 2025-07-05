@@ -23,8 +23,8 @@ return {
 				opts.buffer = bufnr
 
 				if client.server_capabilities.documentSymbolProvider then
-    				require("nvim-navic").attach(client, bufnr)
-  				end
+					require("nvim-navic").attach(client, bufnr)
+				end
 
 				-- LSP Keymaps Extras (Most provided by snacks)
 				opts.desc = "Show available code actions"
@@ -90,16 +90,16 @@ return {
 			})
 
 			lspconfig.html.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			init_options = {
-				configurationSection = { "html", "javascript", "typescript", "css" },
-				embeddedLanguages = {
-					javascript = true,
-					css = true,
+				capabilities = capabilities,
+				on_attach = on_attach,
+				init_options = {
+					configurationSection = { "html", "javascript", "typescript", "css" },
+					embeddedLanguages = {
+						javascript = true,
+						css = true,
+					},
 				},
-			},
-			filetypes = { "html" },
+				filetypes = { "html" },
 			})
 
 			lspconfig.cssls.setup({
@@ -120,11 +120,36 @@ return {
 			})
 
 			lspconfig.bashls.setup({
-			    capabilities = capabilities,
-			    filetypes = {"sh", "bash"},
-			    cmd = {"bash-language-server", "start"},
+				capabilities = capabilities,
+				filetypes = { "sh", "bash" },
+				cmd = { "bash-language-server", "start" },
 			})
 
+			lspconfig.dockerls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+			})
+
+			lspconfig.yamlls.setup({
+				capabilities = capabilities,
+				on_attach = on_attach,
+				settings = {
+					yaml = {
+						schemas = {
+							["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = {
+								"docker-compose.yml",
+								"docker-compose.*.yml",
+							},
+						},
+						validate = true,
+						hover = true,
+						completion = true,
+						format = {
+							enable = true,
+						},
+					},
+				},
+			})
 
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
@@ -148,4 +173,3 @@ return {
 		end,
 	},
 }
-
