@@ -12,4 +12,4 @@ vim.g.lsp_automatic_server_config = false
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.o.shell = "zsh"
+vim.o.shell = "bash"

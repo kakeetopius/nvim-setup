@@ -64,3 +64,12 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.bo.expandtab = false  -- use tabs, not spaces (Go standard)
+    vim.bo.shiftwidth = 5     -- indent operations = 4 spaces
+    vim.bo.tabstop = 4        -- a tab character looks like 4 spaces
+    vim.bo.softtabstop = 4    -- <Tab> feels like 4 spaces when editing
+  end,
+})
