@@ -12,4 +12,5 @@ vim.g.lsp_automatic_server_config = false
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 
-vim.o.shell = "bash"
+vim.opt.shell = "bash"
+vim.opt.wrap = false

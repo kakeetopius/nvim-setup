@@ -10,7 +10,8 @@ return {
 
 		config = function()
 			--import lspconfig plugin
-			local lspconfig = require("lspconfig")
+			--local lspconfig = require("lspconfig")
+			local lspconfig = vim.lsp.config
 
 			--import cmp-nvim-lsp plugin
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -19,7 +20,7 @@ return {
 
 			local opts = { noremap = true, silent = true }
 
-			local on_attach = function(client, bufnr)
+			vim.lsp.on_attach = function(client, bufnr)
 				-- Define your lsp_signature options here
 				local signature_opts = {
 					bind = true,
@@ -50,15 +51,39 @@ return {
 
 				opts.desc = "Restart LSP"
 				keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)
+
+				--SERVER SPECIFIC CONFIGS
+				--intelephense
+				if client.name == "intelephense" then
+				    client.server_capabilities.documentFormattingProvider = false
+				    client.server_capabilities.documentRangeFormattingProvider = false
+				end
+				-- ts_ls
+				if client.name == "ts_ls" then
+				    client.server_capabilities.documentFormattingProvider = false
+				end
 			end
 
 			local capabilities = cmp_nvim_lsp.default_capabilities()
 
 			local util = require("lspconfig.util")
+			local enabled_lsps = {
+			    "pyright",
+			    "clangd",
+			    "ts_ls",
+			    "lua_ls",
+			    "intelephense",
+			    "gopls",
+			    "yamlls",
+			    "html",
+			    "cssls",
+			    "dockerls",
+			    "bashls"
+		        }
 
+			vim.lsp.enable(enabled_lsps)
 			--LSP Servers
-			lspconfig.pyright.setup({
-				on_attach = on_attach,
+			lspconfig("pyright", {
 				capabilities = capabilities,
 				settings = {
 					python = {
@@ -67,9 +92,8 @@ return {
 				},
 			})
 
-			lspconfig.clangd.setup({
+			lspconfig("clangd" , {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				cmd = {
 					"clangd",
 					"--background-index",
@@ -89,12 +113,11 @@ return {
 				},
 			})
 
-			lspconfig.gopls.setup({
+			lspconfig("gopls", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				cmd = { "gopls" },
 				filetypes = { "go", "gomod", "gowork", "gotmpl" },
-				root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+				root_dir = util.root_pattern("go.work", "go.mod", ".git"),
 				settings = {
 					gopls = {
 						analyses = {
@@ -106,19 +129,13 @@ return {
 				},
 			})
 
-			lspconfig.intelephense.setup({
+			lspconfig("intelephense", {
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					client.server_capabilities.documentFormattingProvider = false
-					client.server_capabilities.documentRangeFormattingProvider = false
-					on_attach(client, bufnr)
-				end,
 				root_dir = util.root_pattern("composer.json", ".git"),
 			})
 
-			lspconfig.html.setup({
+			lspconfig("html", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				init_options = {
 					configurationSection = { "html", "javascript", "typescript", "css" },
 					embeddedLanguages = {
@@ -129,37 +146,30 @@ return {
 				filetypes = { "html" },
 			})
 
-			lspconfig.cssls.setup({
+			lspconfig("cssls", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				root_dir = util.root_pattern("package.json", ".git"),
 			})
 
-			lspconfig.ts_ls.setup({
+			lspconfig("ts_ls", {
 				capabilities = capabilities,
-				on_attach = function(client, bufnr)
-					client.server_capabilities.documentFormattingProvider = false
-					on_attach(client, bufnr)
-				end,
 				cmd = { "typescript-language-server", "--stdio" },
 				root_dir = util.root_pattern("package.json", "tsconfig.json", ".git"),
 				filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 			})
 
-			lspconfig.bashls.setup({
+			lspconfig("bashls", {
 				capabilities = capabilities,
 				filetypes = { "sh", "bash" },
 				cmd = { "bash-language-server", "start" },
 			})
 
-			lspconfig.dockerls.setup({
+			lspconfig("dockerls", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 			})
 
-			lspconfig.yamlls.setup({
+			lspconfig("yamlls", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				settings = {
 					yaml = {
 						schemas = {
@@ -178,9 +188,8 @@ return {
 				},
 			})
 
-			lspconfig.lua_ls.setup({
+			lspconfig("lua_ls", {
 				capabilities = capabilities,
-				on_attach = on_attach,
 				settings = { --custom settings for lua
 					Lua = {
 						--make the language server recognize "vim" global
