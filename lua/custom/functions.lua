@@ -28,6 +28,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
   })
 
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+    pattern = "*",
+    callback = function()
+	vim.cmd("normal! zR")
+    end
+})
+
 -- Make nvim recognise some files as shell
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile"},
