@@ -9,3 +9,10 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Ex
 vim.keymap.set("n", "<leader>r", [[:!]], { desc = "Enter run (shell command) mode" })
 vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", { desc = "Vertical Split of screen" })
 vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", {desc = "Toggle Terminal"})
+vim.keymap.set("n", "<C-k>", "<cmd>bprev<CR>", {desc = "Go to previous buffer"})
+vim.keymap.set("n", "<C-j>", "<cmd>bnext<CR>", {desc = "Go to next buffer"})
+
+
+
+
+
