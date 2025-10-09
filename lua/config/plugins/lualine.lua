@@ -39,9 +39,4 @@ return {
 		end,
 	},
 
-	-- For function signatures
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "LspAttach",
-	},
 }

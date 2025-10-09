@@ -21,17 +21,7 @@ return {
 			local opts = { noremap = true, silent = true }
 
 			vim.lsp.on_attach = function(client, bufnr)
-				-- Define your lsp_signature options here
-				local signature_opts = {
-					bind = true,
-					hint_enable = true,
-					floating_window = true,
-					handler_opts = { border = "rounded" },
-				}
-
 				opts.buffer = bufnr
-
-				require("lsp_signature").on_attach(signature_opts, bufnr)
 
 				if client.server_capabilities.documentSymbolProvider then
 					require("nvim-navic").attach(client, bufnr)
