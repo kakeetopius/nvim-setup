@@ -1,4 +1,4 @@
--- which-key.nvim — shows a helpful popup of available keybindings as users start typing a command. 
+-- which-key.nvim — shows a helpful popup of available keybindings as users start typing a command.
 -- It’s great for remembering shortcuts and exploring mappings without needing to check config files.
 
 return {
@@ -9,12 +9,12 @@ return {
 
         keys = {
             {
-            "<leader>?",
-            function()
-                require("which-key").show({ global = false })
-            end,
-            desc = "Buffer Local Keymaps (which-key)",
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
             },
         },
-}
+    },
 }

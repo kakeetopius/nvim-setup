@@ -15,7 +15,3 @@ vim.opt.autoindent = true
 vim.opt.shell = "bash"
 vim.opt.wrap = false
 vim.opt.foldmethod = "indent"
-
-
-
-
