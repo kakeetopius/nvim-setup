@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", { desc = "Vertical Split of
 vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", {desc = "Toggle Terminal"})
 vim.keymap.set("n", "<C-k>", "<cmd>bprev<CR>", {desc = "Go to previous buffer"})
 vim.keymap.set("n", "<C-j>", "<cmd>bnext<CR>", {desc = "Go to next buffer"})
-
+vim.keymap.set({'n', 'v'}, '<leader>nh', '<cmd>nohlsearch<CR>', {desc = "Remove highlight for search"})
 
 
 
