@@ -1,3 +1,5 @@
+-- nvim-lspconfig plugin is used to configure the 
+-- different lsp servers.
 return {
 	{
 		"neovim/nvim-lspconfig",

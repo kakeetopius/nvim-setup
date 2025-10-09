@@ -1,5 +1,8 @@
+-- Autotag plugin helps to add the
+-- corresponding tag for markup 
+-- languages like html
+
 return {
-       -- Auto Tag Closing
     {
         "windwp/nvim-ts-autotag",
         event = "InsertEnter",

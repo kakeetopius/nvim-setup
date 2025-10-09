@@ -1,3 +1,6 @@
+-- Mason plugin is used to install
+-- the different Lsp servers and
+-- formatters.
 return {
     {
         "williamboman/mason.nvim",

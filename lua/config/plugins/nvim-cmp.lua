@@ -1,3 +1,6 @@
+--nvim-cmp — a completion plugin that provides intelligent autocompletion for code, commands, and snippets. 
+--It integrates with multiple sources like LSP, buffers, paths, and more.
+
 return {
     {
         "hrsh7th/nvim-cmp",

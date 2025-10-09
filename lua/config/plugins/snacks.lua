@@ -1,3 +1,6 @@
+-- snacks.nvim — a collection of small quality-of-life plugins bundled together, offering features like better notifications, 
+-- input prompts, pickers, and UI improvements. 
+
 return {
   "folke/snacks.nvim",
   priority = 1000,

@@ -1,3 +1,6 @@
+-- nvim-treesitter — provides better syntax highlighting and code understanding by using Tree-sitter parsers. 
+-- making highlighting, indentation, and code navigation more accurate and language-aware.
+
 return {
     {
 	"nvim-treesitter/nvim-treesitter",

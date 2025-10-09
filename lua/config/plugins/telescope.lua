@@ -1,3 +1,6 @@
+-- telescope.nvim — a fuzzy finder that makes it easy to search and open files, buffers, commands, git commits, and more 
+--  all from an interactive popup..
+
 return {
     {
         "nvim-telescope/telescope.nvim",

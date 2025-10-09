@@ -1,3 +1,6 @@
+--Comment.nvim — allows to easily comment or uncomment lines of code using simple keybindings. 
+--It automatically detects the correct comment syntax for each language,
+
 return {
     {
         "numToStr/Comment.nvim",

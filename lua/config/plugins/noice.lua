@@ -1,3 +1,5 @@
+-- noice.lua used for ui elements but only used for cmdline in this configuration
+
 return {
     -- lazy.nvim
     {

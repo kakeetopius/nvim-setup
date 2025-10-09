@@ -1,3 +1,6 @@
+--lualine.nvim — a fast and highly customizable statusline plugin that shows useful information like the current mode, 
+--file name, git branch, diagnostics, and more
+
 return {
 	{
 		"nvim-lualine/lualine.nvim",
