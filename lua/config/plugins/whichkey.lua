@@ -7,13 +7,17 @@ return {
 
         event = "VeryLazy",
 
+	opts = {
+	    preset = "modern", -- options are helix, modern, classic
+	},
+
         keys = {
             {
                 "<leader>?",
                 function()
                     require("which-key").show({ global = false })
                 end,
-                desc = "Buffer Local Keymaps (which-key)",
+                desc = "buffer local keymaps (which-key)",
             },
         },
     },

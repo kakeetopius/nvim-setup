@@ -30,7 +30,7 @@ return {
 
             -- DISABLING EVERYTHING ELSE
             messages = { enabled = false },
-            popupmenu = { enabled = false },
+            -- popupmenu = { enabled = false },
             notify = { enabled = false },
             lsp = {
                 progress = { enabled = false },
@@ -40,7 +40,9 @@ return {
             },
             health = { checker = false },
             markdown = { hover = {}, highlights = {} },
-            presets = {},
+            presets = {
+		command_palette = true,
+	    },
         },
         dependencies = {
             "MunifTanjim/nui.nvim",
