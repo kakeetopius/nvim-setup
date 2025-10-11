@@ -1,6 +1,5 @@
 --lualine.nvim — a fast and highly customizable statusline plugin that shows useful information like the current mode,
 --file name, git branch, diagnostics, and more
-
 return {
     {
         "nvim-lualine/lualine.nvim",
@@ -28,15 +27,6 @@ return {
                     lualine_x = { "filetype" },
                     lualine_y = { "progress" }, -- Shows scroll percentage like 33%
                     lualine_z = { "location" },
-                    lualine_c = {
-                        { "filename" },
-                        {
-                            function()
-                                return navic.get_location()
-                            end,
-                            cond = navic.is_available,
-                        },
-                    },
                 },
             })
         end,
