@@ -52,3 +52,10 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.bo.softtabstop = 4 -- <Tab> feels like 4 spaces when editing
     end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "telekasten",
+  callback = function()
+    vim.bo.filetype = "markdown"
+  end,
+})

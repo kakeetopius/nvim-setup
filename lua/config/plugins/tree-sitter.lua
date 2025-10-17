@@ -30,6 +30,7 @@ return {
                     "rust",
                     "go",
                     "php",
+		    "latex",
                 },
 
                 sync_install = false,
