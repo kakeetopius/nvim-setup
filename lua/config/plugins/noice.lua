@@ -1,6 +1,7 @@
 -- noice.lua used for ui elements but only used for cmdline in this configuration
 
 return {
+
     -- lazy.nvim
     {
         "folke/noice.nvim",
@@ -29,9 +30,9 @@ return {
             },
 
             -- DISABLING EVERYTHING ELSE
-            messages = { enabled = false },
-            -- popupmenu = { enabled = false },
-            notify = { enabled = false },
+            -- messages = { enabled = false },
+            popupmenu = { enabled = false },
+            notify = { enabled = true },
             lsp = {
                 progress = { enabled = false },
                 hover = { enabled = false },
@@ -44,6 +45,7 @@ return {
 		command_palette = true,
 	    },
         },
+
         dependencies = {
             "MunifTanjim/nui.nvim",
         },

@@ -11,38 +11,15 @@ return {
         },
 
         config = function()
-            --import lspconfig plugin
-            --local lspconfig = require("lspconfig")
             local lspconfig = vim.lsp.config
 
             --import cmp-nvim-lsp plugin
             local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-            local keymap = vim.keymap
-
-            local opts = { noremap = true, silent = true }
-
             vim.lsp.on_attach = function(client, bufnr)
-                opts.buffer = bufnr
-
                 if client.server_capabilities.documentSymbolProvider then
                     require("nvim-navic").attach(client, bufnr)
                 end
-
-                -- LSP Keymaps Extras (Most provided by snacks)
-                opts.desc = "Show available code actions"
-                keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-
-                opts.desc = "Smart rename"
-                keymap.set("n", "<leader>n", vim.lsp.buf.rename, opts)
-
-                opts.desc = "Show buffer diagnostics"
-                keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-                opts.desc = "Show documentation for what is under cursor"
-                keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-                opts.desc = "Restart LSP"
-                keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)
 
                 --SERVER SPECIFIC CONFIGS
                 --intelephense
@@ -58,7 +35,6 @@ return {
 
             local capabilities = cmp_nvim_lsp.default_capabilities()
 
-            local util = require("lspconfig.util")
             local enabled_lsps = {
                 "pyright",
                 "clangd",
@@ -70,6 +46,7 @@ return {
                 "html",
                 "cssls",
                 "dockerls",
+                "mesonlsp",
                 "bashls",
             }
 
@@ -106,9 +83,6 @@ return {
             })
 
             lspconfig("gopls", {
-                cmd = { "gopls" },
-                filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                root_markers = util.root_pattern("go.work", "go.mod", ".git"),
                 settings = {
                     gopls = {
                         analyses = {
@@ -118,45 +92,13 @@ return {
                         staticcheck = true,
                     },
                 },
-            })
-
-            lspconfig("intelephense", {
-                capabilities = capabilities,
-                root_dir = util.root_pattern("composer.json", ".git"),
-            })
-
-            lspconfig("html", {
-                capabilities = capabilities,
-                init_options = {
-                    configurationSection = { "html", "javascript", "typescript", "css" },
-                    embeddedLanguages = {
-                        javascript = true,
-                        css = true,
-                    },
-                },
-                filetypes = { "html" },
-            })
-
-            lspconfig("cssls", {
-                capabilities = capabilities,
-                root_dir = util.root_pattern("package.json", ".git"),
-            })
-
-            lspconfig("ts_ls", {
-                capabilities = capabilities,
-                cmd = { "typescript-language-server", "--stdio" },
-                root_dir = util.root_pattern("package.json", "tsconfig.json", ".git"),
-                filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+		capabilities = capabilities
             })
 
             lspconfig("bashls", {
                 capabilities = capabilities,
                 filetypes = { "sh", "bash" },
                 cmd = { "bash-language-server", "start" },
-            })
-
-            lspconfig("dockerls", {
-                capabilities = capabilities,
             })
 
             lspconfig("yamlls", {

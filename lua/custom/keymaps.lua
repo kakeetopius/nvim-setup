@@ -1,16 +1,89 @@
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
---run current line
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
---run block in visual mode
-vim.keymap.set("v", "<space>x", ":lua<CR>")
-
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
-vim.keymap.set("n", "<leader>r", [[:!]], { desc = "Enter run (shell command) mode" })
-vim.keymap.set("n", "<leader>vs", "<cmd>vsplit<CR>", { desc = "Vertical Split of screen" })
-vim.keymap.set("n", "<leader>t", "<cmd>terminal<CR>", { desc = "Toggle Terminal" })
-vim.keymap.set("n", "<C-k>", "<cmd>bprev<CR>", { desc = "Go to previous buffer" })
-vim.keymap.set("n", "<C-j>", "<cmd>bnext<CR>", { desc = "Go to next buffer" })
-vim.keymap.set({ "n", "v" }, "<leader>nh", "<cmd>nohlsearch<CR>", { desc = "Remove highlight for search" })
-vim.keymap.set("t", "<C-Space>" ,[[<C-\><C-n>]], { desc = "Go to normal mode from terminal mode",  noremap = true})
+local map = vim.keymap.set
+local opts = { noremap = true }
+
+opts.desc = "Show available code actions"
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+
+opts.desc = "Smart rename"
+map("n", "<leader>rn", vim.lsp.buf.rename, opts)
+
+opts.desc = "Show buffer diagnostics"
+map("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
+
+opts.desc = "Show documentation for what is under cursor"
+map("n", "K", vim.lsp.buf.hover, opts)
+
+opts.desc = "Restart LSP"
+map("n", "<leader>lr", "<cmd>LspRestart<CR>", opts)
+
+opts.desc = "Toogle File Explorer"
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+opts.desc = "Enter run mode (shell command)"
+map("n", "<leader>rs", [[:!]], opts)
+
+opts.desc = "Vertically Split Screen"
+map("n", "<leader>vs", "<cmd>vsplit<CR>", opts)
+
+opts.desc = "Toogle Terminal"
+map("n", "<leader>tt", "<cmd>terminal<CR>", opts)
+
+opts.desc = "Remove highlight for search"
+map({ "n", "v" }, "<leader>nh", "<cmd>nohlsearch<CR>", opts)
+
+opts.desc = "Go to normal mode from terminal mode"
+map("t", "<C-Space>", [[<C-\><C-n>]], opts)
+
+-- buffer / tab management keymaps by barbar.nvim
+-- Move to previous/next
+opts.desc = ""
+map('n', '<A-l>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-k>', '<Cmd>BufferNext<CR>', opts)
+
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+
+-- Goto buffer in position...
+map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
+map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
+map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
+map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
+map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
+map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
+map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
+map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
+map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
+map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
+
+-- Pin/unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+
+--Pick a buffer
+map('n', '<A-q>',   '<Cmd>BufferPick<CR>', opts)
+
+--tab management
+opts.desc="Open a new tab"
+map('n', '<Leader>tn', ':tabnew<CR>', opts)
+
+opts.desc="Close tab"
+map('n', '<Leader>tc', ':tabclose<CR>', opts)
+
+-- markdown management by telekasten
+-- Launch panel if nothing is typed after <leader>z
+map("n", "<leader>zp", "<cmd>Telekasten panel<CR>")
+
+map("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
+map("n", "<leader>zg", "<cmd>Telekasten search_notes<CR>")
+map("n", "<leader>zd", "<cmd>Telekasten goto_today<CR>")
+map("n", "<leader>zz", "<cmd>Telekasten follow_link<CR>")
+map("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
+map("n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>")
+map("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+map("n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>")
+
 

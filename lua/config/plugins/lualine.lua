@@ -8,8 +8,6 @@ return {
             "SmiteshP/nvim-navic",
         },
         config = function()
-            local navic = require("nvim-navic")
-
             require("nvim-navic").setup({
                 highlight = true,
                 separator = " › ",

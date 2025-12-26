@@ -13,22 +13,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = "*.php",
-    callback = function()
-        vim.bo.filetype = "php"
-        vim.bo.indentexpr = "" -- Disable filetype indent plugin logic
-        vim.bo.autoindent = true
-        vim.bo.smartindent = true
-
-        -- Set tab to 4 spaces
-        vim.bo.shiftwidth = 4 -- Indentation size when indenting (>>)
-        vim.bo.tabstop = 4 -- A tab character displays as 4 spaces
-        vim.bo.softtabstop = 4 -- Number of spaces when pressing <Tab>
-        vim.bo.expandtab = true -- Convert tabs to spaces
-    end,
-})
-
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*",
     callback = function()
         vim.cmd("normal! zR")
