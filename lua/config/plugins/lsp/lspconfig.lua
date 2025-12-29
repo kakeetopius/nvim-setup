@@ -52,8 +52,11 @@ return {
 
             vim.lsp.enable(enabled_lsps)
             --LSP Servers
+	    lspconfig("*", {
+		capabilities = capabilities,
+	    })
+
             lspconfig("pyright", {
-                capabilities = capabilities,
                 settings = {
                     python = {
                         analysis = { typeCheckingMode = "off" },
@@ -62,7 +65,6 @@ return {
             })
 
             lspconfig("clangd", {
-                capabilities = capabilities,
                 cmd = {
                     "clangd",
                     "--background-index",
@@ -92,17 +94,14 @@ return {
                         staticcheck = true,
                     },
                 },
-		capabilities = capabilities
             })
 
             lspconfig("bashls", {
-                capabilities = capabilities,
                 filetypes = { "sh", "bash" },
                 cmd = { "bash-language-server", "start" },
             })
 
             lspconfig("yamlls", {
-                capabilities = capabilities,
                 settings = {
                     yaml = {
                         schemas = {
@@ -122,7 +121,6 @@ return {
             })
 
             lspconfig("lua_ls", {
-                capabilities = capabilities,
                 settings = { --custom settings for lua
                     Lua = {
                         --make the language server recognize "vim" global
