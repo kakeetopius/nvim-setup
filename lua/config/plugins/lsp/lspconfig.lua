@@ -48,6 +48,7 @@ return {
                 "dockerls",
                 "mesonlsp",
                 "bashls",
+		"powershell_es",
             }
 
             vim.lsp.enable(enabled_lsps)
