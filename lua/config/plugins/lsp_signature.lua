@@ -7,7 +7,7 @@ return {
         event = "InsertEnter",
         opts = {
             bind = true,
-            hint_enable = false,
+            hint_enable = true,
             floating_window = true,
             wrap = true,
             handler_opts = {

@@ -20,23 +20,12 @@ return {
                 if client.server_capabilities.documentSymbolProvider then
                     require("nvim-navic").attach(client, bufnr)
                 end
-
-                --SERVER SPECIFIC CONFIGS
-                --intelephense
-                if client.name == "intelephense" then
-                    client.server_capabilities.documentFormattingProvider = false
-                    client.server_capabilities.documentRangeFormattingProvider = false
-                end
-                -- ts_ls
-                if client.name == "ts_ls" then
-                    client.server_capabilities.documentFormattingProvider = false
-                end
             end
 
             local capabilities = cmp_nvim_lsp.default_capabilities()
 
             local enabled_lsps = {
-                "pyright",
+                "ty",
                 "clangd",
                 "ts_ls",
                 "lua_ls",
@@ -48,21 +37,23 @@ return {
                 "dockerls",
                 "mesonlsp",
                 "bashls",
-		"powershell_es",
+                "powershell_es",
             }
 
             vim.lsp.enable(enabled_lsps)
             --LSP Servers
-	    lspconfig("*", {
-		capabilities = capabilities,
-	    })
+            lspconfig("*", {
+                capabilities = capabilities,
+            })
 
-            lspconfig("pyright", {
+            lspconfig("ty", {
                 settings = {
-                    python = {
-                        analysis = { typeCheckingMode = "off" },
-                    },
+                    ty = {},
                 },
+            })
+
+            lspconfig("powershell_es", {
+                bundle_path = "~/.local/share/nvim/mason/packages/powershell-editor-services",
             })
 
             lspconfig("clangd", {

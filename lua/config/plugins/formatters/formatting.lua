@@ -24,7 +24,7 @@ return {
                 html = { "prettier" },
                 json = { "prettier" },
                 lua = { "stylua" },
-                python = { "black" },
+                python = { "ruff" },
                 markdown = { "prettier" },
                 go = { "gofumpt" },
             },
@@ -43,11 +43,6 @@ return {
                         "$FILENAME",
                         "-",
                     },
-                },
-                black = {
-                    command = "black",
-                    args = { "--fast", "-" },
-                    stdin = true,
                 },
             },
         })

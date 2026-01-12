@@ -38,8 +38,33 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "telekasten",
-  callback = function()
-    vim.bo.filetype = "markdown"
-  end,
+    pattern = "telekasten",
+    callback = function()
+        vim.bo.filetype = "markdown"
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+        local conform = require("conform")
+        -- Shared formatting options
+        local format_opts = {
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500,
+        }
+        conform.format(format_opts)
+    end,
+})
+
+-- Enable inlay hints when LSP attaches
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function()
+        vim.lsp.inlay_hint.enable()
+    end,
+})
+
+vim.diagnostic.config({
+    virtual_text = true,
 })

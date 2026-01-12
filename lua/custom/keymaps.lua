@@ -92,8 +92,12 @@ map("n", "<leader>dM", ":delmarks a-z<CR>", opts)
 opts.desc = "Delete a mark."
 map("n", "<leader>dm", function()
     vim.ui.input({ prompt = "Enter mark: " }, function(input)
-	local bufno = vim.api.nvim_get_current_buf()
+        local bufno = vim.api.nvim_get_current_buf()
         vim.api.nvim_buf_set_mark(bufno, input, 0, 0, {})
     end)
 end, opts)
 
+--notification management by nvim-notify
+opts.desc = "View notification History"
+opts.noremap = false
+map("n", "<leader>nn", "<cmd>Telescope notify<CR>", opts)

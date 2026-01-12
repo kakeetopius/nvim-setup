@@ -31,8 +31,8 @@ return {
 
             -- DISABLING EVERYTHING ELSE
             -- messages = { enabled = false },
-            popupmenu = { enabled = false },
-            notify = { enabled = true },
+            popupmenu = { enabled = true },
+            notify = { enabled = true, view = "notify" },
             lsp = {
                 progress = { enabled = false },
                 hover = { enabled = false },
@@ -42,8 +42,8 @@ return {
             health = { checker = false },
             markdown = { hover = {}, highlights = {} },
             presets = {
-		command_palette = true,
-	    },
+                command_palette = true,
+            },
         },
 
         dependencies = {
