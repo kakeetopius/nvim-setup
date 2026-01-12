@@ -27,6 +27,7 @@ return {
                 python = { "ruff" },
                 markdown = { "prettier" },
                 go = { "gofumpt" },
+                rust = { "rustfmt" },
             },
 
             -- Custom formatter settings

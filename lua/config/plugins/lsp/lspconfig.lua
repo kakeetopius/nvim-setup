@@ -38,6 +38,7 @@ return {
                 "mesonlsp",
                 "bashls",
                 "powershell_es",
+                "rust_analyzer",
             }
 
             vim.lsp.enable(enabled_lsps)
