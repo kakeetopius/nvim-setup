@@ -62,7 +62,7 @@ return {
             layout = {
                 layout = {
                     width = 0.17,
-                    --  height = 0.5,
+                    height = 0.9,
                 },
             },
         },
@@ -73,7 +73,7 @@ return {
         words = { enabled = true },
         styles = {
             notification = {
-                -- wo = { wrap = true } -- Wrap notifications
+                wo = { wrap = true }, -- Wrap notifications
             },
         },
 
