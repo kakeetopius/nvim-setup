@@ -19,6 +19,15 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
+vim.api.nvim_create_autocmd("WinEnter", {
+    callback = function()
+        local cfg = vim.api.nvim_win_get_config(0)
+        if cfg.relative ~= "" then
+            vim.wo.foldenable = false
+        end
+    end,
+})
+
 -- Make nvim recognise some files as shell
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile" },
