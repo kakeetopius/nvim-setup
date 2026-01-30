@@ -21,7 +21,7 @@ return {
                 javascriptreact = { "prettier" },
                 typescriptreact = { "prettier" },
                 css = { "prettier" },
-                html = { "prettier" },
+                -- html = { "prettier" },
                 json = { "prettier" },
                 lua = { "stylua" },
                 python = { "ruff" },
