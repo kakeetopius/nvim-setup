@@ -30,7 +30,8 @@ return {
                     "rust",
                     "go",
                     "php",
-		    "latex",
+                    "latex",
+                    "gotmpl",
                 },
 
                 sync_install = false,
@@ -38,6 +39,7 @@ return {
                 auto_install = false,
 
                 indent = { enable = true },
+                autotag = true,
 
                 highlight = {
                     enable = true,

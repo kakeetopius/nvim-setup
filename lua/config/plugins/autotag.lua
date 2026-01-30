@@ -5,7 +5,7 @@
 return {
     {
         "windwp/nvim-ts-autotag",
-        event = "InsertEnter",
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             require("nvim-ts-autotag").setup({
                 filetypes = {
@@ -26,9 +26,10 @@ return {
                     "glimmer",
                     "handlebars",
                     "hbs",
+                    "gotmpl",
+                    "embedded_template",
                 },
             })
         end,
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
 }

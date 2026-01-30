@@ -47,6 +47,16 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
+    pattern = "html",
+    callback = function()
+        vim.bo.expandtab = true
+        vim.bo.shiftwidth = 2 -- indent operations = 2 spaces
+        vim.bo.tabstop = 2 -- a tab character looks like 2 spaces
+        vim.bo.softtabstop = 2 -- <Tab> feels like 2 spaces when editing
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
     pattern = "telekasten",
     callback = function()
         vim.bo.filetype = "markdown"
@@ -76,4 +86,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.diagnostic.config({
     virtual_text = true,
+})
+
+vim.filetype.add({
+    extension = {
+        tmpl = "gotmpl",
+    },
 })
