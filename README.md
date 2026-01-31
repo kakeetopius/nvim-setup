@@ -11,13 +11,7 @@
 Clone the repository and install the plugins:
 
 ```sh
-git clone git@github.com:kakeetopius/nvim-setup ~/.config/kakeetopius/nvim-setup
-```
-
-Open Neovim with this config:
-
-```sh
-NVIM_APPNAME=kakeetopius/nvim-setup/ nvim
+git clone git@github.com:kakeetopius/nvim-setup ~/.config/$USER/nvim
 ```
 
 ## Plugins
