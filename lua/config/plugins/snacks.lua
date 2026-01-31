@@ -47,7 +47,7 @@ return {
             },
         },
         explorer = {
-            enabled = true,
+            enabled = false,
         },
 
         indent = { enabled = true },
@@ -111,14 +111,6 @@ return {
             end,
             desc = "Command History",
         },
-        {
-            "<leader>e",
-            function()
-                Snacks.explorer()
-            end,
-            desc = "File Explorer",
-        },
-
         -- find
         {
             "<leader>fb",

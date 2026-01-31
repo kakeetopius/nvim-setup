@@ -18,7 +18,7 @@ opts.desc = "Restart LSP"
 map("n", "<leader>lr", "<cmd>LspRestart<CR>", opts)
 
 opts.desc = "Toogle File Explorer"
-map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
 
 opts.desc = "Enter run mode (shell command)"
 map("n", "<leader>rs", [[:!]], opts)
