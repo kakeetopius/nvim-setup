@@ -11,7 +11,7 @@
 Clone the repository and install the plugins:
 
 ```sh
-git clone git@github.com:kakeetopius/nvim-setup ~/.config/$USER/nvim
+git clone git@github.com:kakeetopius/nvim-setup ~/.config/nvim
 ```
 
 ## Plugins
