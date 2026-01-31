@@ -14,6 +14,12 @@ return {
             window = {
                 width = 30,
             },
+            filesystem = {
+                follow_current_file = {
+                    enabled = true,
+                },
+                hijack_netrw_behavior = "open_current",
+            },
         },
     },
     {

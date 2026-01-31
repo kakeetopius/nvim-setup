@@ -18,7 +18,10 @@ opts.desc = "Restart LSP"
 map("n", "<leader>lr", "<cmd>LspRestart<CR>", opts)
 
 opts.desc = "Toogle File Explorer"
-map("n", "<leader>e", "<cmd>Neotree toggle<CR>", opts)
+map("n", "<leader>e", "<cmd>Neotree left toggle<CR>", opts)
+
+opts.desc = "Open NeoTree Float"
+map("n", "<M-f>", "<cmd>Neotree float <CR>", opts)
 
 opts.desc = "Enter run mode (shell command)"
 map("n", "<leader>rs", [[:!]], opts)
