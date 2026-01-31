@@ -1,4 +1,4 @@
-# nvim-setup/
+# nvim-setup
 
 <a href="https://dotfyle.com/kakeetopius/nvim-setup"><img src="https://dotfyle.com/kakeetopius/nvim-setup/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/kakeetopius/nvim-setup"><img src="https://dotfyle.com/kakeetopius/nvim-setup/badges/leaderkey?style=flat" /></a>
