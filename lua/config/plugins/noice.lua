@@ -9,7 +9,7 @@ return {
         opts = {
             cmdline = {
                 enabled = true,
-                view = "cmdline_popup",
+                view = "cmdline",
                 opts = {},
                 ---@type table<string, CmdlineFormat>
                 format = {
@@ -29,8 +29,15 @@ return {
                 },
             },
 
-            -- DISABLING EVERYTHING ELSE
-            -- messages = { enabled = false },
+            messages = {
+                enabled = true,
+                view = "mini",
+            },
+            views = {
+                mini = {
+                    timeout = 8000,
+                },
+            },
             popupmenu = { enabled = true },
             notify = { enabled = true, view = "notify" },
             lsp = {
@@ -39,10 +46,11 @@ return {
                 signature = { enabled = false },
                 message = { enabled = false },
             },
-            health = { checker = false },
+            health = { checker = true },
             markdown = { hover = {}, highlights = {} },
             presets = {
                 command_palette = true,
+                bottom_search = true,
             },
         },
 
