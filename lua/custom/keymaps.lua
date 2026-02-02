@@ -2,6 +2,13 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 local opts = { noremap = true }
 
+map("i", "<C-b>", "<ESC>I", { desc = "move beginning of line" })
+map("i", "<C-e>", "<ESC>A", { desc = "move end of line" })
+map("i", "<C-h>", "<Left>", { desc = "move left" })
+map("i", "<C-l>", "<Right>", { desc = "move right" })
+map("i", "<C-j>", "<Down>", { desc = "move down" })
+map("i", "<C-k>", "<Up>", { desc = "move up" })
+
 opts.desc = "Show available code actions"
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 

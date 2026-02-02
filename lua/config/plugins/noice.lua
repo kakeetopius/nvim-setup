@@ -1,7 +1,6 @@
 -- noice.lua used for ui elements but only used for cmdline in this configuration
 
 return {
-
     -- lazy.nvim
     {
         "folke/noice.nvim",
@@ -35,9 +34,16 @@ return {
             },
             views = {
                 mini = {
-                    timeout = 8000,
+                    timeout = 5000,
                 },
             },
+            -- routes = {
+            --     {
+            --         filter = { event = "msg_showcmd" },
+            --         view = "mini",
+            --         opts = { skip = false },
+            --     },
+            -- },
             popupmenu = { enabled = true },
             notify = { enabled = true, view = "notify" },
             lsp = {
