@@ -9,6 +9,14 @@ map("i", "<C-l>", "<Right>", { desc = "move right" })
 map("i", "<C-j>", "<Down>", { desc = "move down" })
 map("i", "<C-k>", "<Up>", { desc = "move up" })
 
+-- Due to weird tmux behaviour with Home and End buttons
+map("n", "<Find>", "^", opts)
+map("n", "<Select>", "$", opts)
+map("i", "<Find>", "<C-o>^", opts)
+map("i", "<Select>", "<C-o>$", opts)
+map("v", "<Find>", "^", opts)
+map("v", "<Select>", "$", opts)
+
 opts.desc = "Show available code actions"
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
