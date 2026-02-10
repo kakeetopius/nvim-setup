@@ -85,6 +85,8 @@ return {
                             shadow = true,
                         },
                         staticcheck = true,
+                        completeUnimported = true,
+                        usePlaceholders = true,
                     },
                 },
             })
