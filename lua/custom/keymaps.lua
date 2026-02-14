@@ -133,7 +133,7 @@ map("n", "<leader>nn", "<cmd>Telescope notify<CR>", opts)
 -- debugging keymaps.
 local dap = require("dap")
 opts.desc = "Run/Continue"
-vim.keymap.set("n", "<leader>dc", function()
+map("n", "<leader>dc", function()
     dap.continue()
 end, opts)
 
@@ -162,17 +162,17 @@ map("n", "<leader>dP", function()
 end, opts)
 
 opts.desc = "Step Over"
-vim.keymap.set("n", "<leader>do", function()
+map("n", "<leader>do", function()
     dap.step_over()
 end, opts)
 
 opts.desc = "Step Into"
-vim.keymap.set("n", "<leader>di", function()
+map("n", "<leader>di", function()
     dap.step_into()
 end, opts)
 
 opts.desc = "Step Out"
-vim.keymap.set("n", "<leader>dO", function()
+map("n", "<leader>dO", function()
     dap.step_out()
 end, opts)
 
@@ -187,12 +187,12 @@ map("n", "<leader>dk", function()
 end, opts)
 
 opts.desc = "Toggle Breakpoint"
-vim.keymap.set("n", "<leader>db", function()
+map("n", "<leader>db", function()
     dap.toggle_breakpoint()
 end, opts)
 
 opts.desc = "Set Breakpoint"
-vim.keymap.set("n", "<leader>dB", function()
+map("n", "<leader>dB", function()
     dap.set_breakpoint()
 end, opts)
 
@@ -212,32 +212,32 @@ map("n", "<leader>ds", function()
 end, opts)
 
 opts.desc = "Toggle REPL"
-vim.keymap.set("n", "<leader>dr", function()
+map("n", "<leader>dr", function()
     dap.repl.toggle()
 end, opts)
 
 opts.desc = "Run Last"
-vim.keymap.set("n", "<Leader>dl", function()
+map("n", "<Leader>dl", function()
     dap.run_last()
 end, opts)
 
 opts.desc = "Hover widgets"
-vim.keymap.set({ "n", "v" }, "<Leader>dh", function()
+map({ "n", "v" }, "<Leader>dh", function()
     require("dap.ui.widgets").hover()
 end, opts)
 
 opts.desc = "Preview widgets"
-vim.keymap.set({ "n", "v" }, "<Leader>dp", function()
+map({ "n", "v" }, "<Leader>dp", function()
     require("dap.ui.widgets").preview()
 end, opts)
 
 opts.desc = "Debug window with centered float"
-vim.keymap.set("n", "<Leader>df", function()
+map("n", "<Leader>df", function()
     local widgets = require("dap.ui.widgets")
     widgets.centered_float(widgets.frames)
 end, opts)
 
-vim.keymap.set("n", "<Leader>ds", function()
+map("n", "<Leader>ds", function()
     local widgets = require("dap.ui.widgets")
     widgets.centered_float(widgets.scopes)
 end)

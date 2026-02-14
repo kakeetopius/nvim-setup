@@ -45,7 +45,7 @@ return {
         opts = {},
     },
 
-    -- Go specific debug options.
+    -- Go specific debug options/configurations.
     {
         "leoluz/nvim-dap-go",
         ft = "go",
@@ -62,6 +62,14 @@ return {
         "mfussenegger/nvim-dap-python",
         config = function()
             require("dap-python").setup("debugpy-adapter")
+        end,
+    },
+
+    {
+        "julianolf/nvim-dap-lldb",
+        dependencies = { "mfussenegger/nvim-dap" },
+        config = function()
+            require("dap-lldb").setup()
         end,
     },
 }
