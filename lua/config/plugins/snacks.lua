@@ -53,8 +53,8 @@ return {
         indent = { enabled = true },
         input = { enabled = true },
         notifier = {
-            enabled = false,
-            timeout = 3000,
+            enabled = true,
+            timeout = 4000,
         },
 
         picker = {

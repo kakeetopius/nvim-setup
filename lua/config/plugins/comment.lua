@@ -18,4 +18,11 @@ return {
             })
         end,
     },
+
+    -- For higlighting of TODO commonets and the like.
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {},
+    },
 }

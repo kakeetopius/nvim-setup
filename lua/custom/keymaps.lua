@@ -251,3 +251,12 @@ opts.desc = "Eval"
 map({ "n", "x" }, "<leader>de", function()
     require("dapui").eval()
 end, opts)
+
+-- For todo comments
+map("n", "]c", function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+map("n", "[c", function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })

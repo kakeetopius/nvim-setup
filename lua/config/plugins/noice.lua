@@ -37,15 +37,9 @@ return {
                     timeout = 5000,
                 },
             },
-            -- routes = {
-            --     {
-            --         filter = { event = "msg_showcmd" },
-            --         view = "mini",
-            --         opts = { skip = false },
-            --     },
-            -- },
             popupmenu = { enabled = true },
-            notify = { enabled = true, view = "notify" },
+            notify = { enabled = false, view = "notify" },
+            --
             lsp = {
                 progress = { enabled = false },
                 hover = { enabled = false },
