@@ -1,5 +1,6 @@
 -- nvim-lspconfig plugin is used to configure the
 -- different lsp servers.
+local lsps = require("custom.tools").lsps
 return {
     {
         "neovim/nvim-lspconfig",
@@ -24,24 +25,7 @@ return {
 
             local capabilities = cmp_nvim_lsp.default_capabilities()
 
-            local enabled_lsps = {
-                "ty",
-                "clangd",
-                "ts_ls",
-                "lua_ls",
-                "intelephense",
-                "gopls",
-                "yamlls",
-                "html",
-                "cssls",
-                "dockerls",
-                "mesonlsp",
-                "bashls",
-                "powershell_es",
-                "rust_analyzer",
-            }
-
-            vim.lsp.enable(enabled_lsps)
+            vim.lsp.enable(lsps)
             --LSP Servers
             lspconfig("*", {
                 capabilities = capabilities,

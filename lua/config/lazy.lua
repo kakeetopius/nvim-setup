@@ -23,8 +23,7 @@ require("lazy").setup({
     spec = {
 
         { import = "config.plugins" },
-        { import = "config.plugins.lsp" },
-        { import = "config.plugins.formatters" },
+        { import = "config.plugins.devtools" },
     },
     -- colorscheme that will be used when installing plugins.
     install = { colorscheme = { "habamax" } },
