@@ -93,9 +93,7 @@ local mappings = {
     {
         "n",
         "<leader>nd",
-        function()
-            require("notify").dismiss({ silent = true, pending = true })
-        end,
+        function() require("notify").dismiss({ silent = true, pending = true }) end,
         "Dismiss notifications",
     },
 
@@ -105,82 +103,62 @@ local mappings = {
     {
         "n",
         "<leader>dc",
-        function()
-            require("dap").continue()
-        end,
+        function() require("dap").continue() end,
         "Run/Continue",
     },
     {
         "n",
         "<leader>dC",
-        function()
-            require("dap").run_to_cursor()
-        end,
+        function() require("dap").run_to_cursor() end,
         "Run to Cursor",
     },
 
     {
         "n",
         "<leader>do",
-        function()
-            require("dap").step_over()
-        end,
+        function() require("dap").step_over() end,
         "Step Over",
     },
     {
         "n",
         "<leader>di",
-        function()
-            require("dap").step_into()
-        end,
+        function() require("dap").step_into() end,
         "Step Into",
     },
     {
         "n",
         "<leader>dO",
-        function()
-            require("dap").step_out()
-        end,
+        function() require("dap").step_out() end,
         "Step Out",
     },
     {
         "n",
         "<leader>dj",
-        function()
-            require("dap").up()
-        end,
+        function() require("dap").up() end,
         "Down",
     },
     {
         "n",
         "<leader>dk",
-        function()
-            require("dap").down()
-        end,
+        function() require("dap").down() end,
         "Up",
     },
     {
         "n",
         "<leader>db",
-        function()
-            require("dap").toggle_breakpoint()
-        end,
+        function() require("dap").toggle_breakpoint() end,
         "Toggle Breakpoint",
     },
     {
         "n",
         "<leader>dB",
-        function()
-            require("dap").set_breakpoint()
-        end,
+        function() require("dap").set_breakpoint() end,
         "Set Breakpoint",
     },
     {
         "n",
         "<leader>dt",
-        function()
-            require("dap").terminate()
-        end,
+        function() require("dap").terminate() end,
         "Terminate",
     },
     {
@@ -195,33 +173,25 @@ local mappings = {
     {
         "n",
         "<leader>dr",
-        function()
-            require("dap").repl.toggle()
-        end,
+        function() require("dap").repl.toggle() end,
         "Toggle REPL",
     },
     {
         "n",
         "<Leader>dl",
-        function()
-            require("dap").run_last()
-        end,
+        function() require("dap").run_last() end,
         "Run Last",
     },
     {
         { "n", "v" },
         "<Leader>dh",
-        function()
-            require("dap.ui.widgets").hover()
-        end,
+        function() require("dap.ui.widgets").hover() end,
         "Hover widgets",
     },
     {
         { "n", "v" },
         "<Leader>dp",
-        function()
-            require("dap.ui.widgets").preview()
-        end,
+        function() require("dap.ui.widgets").preview() end,
         "Preview widgets",
     },
     {
@@ -236,17 +206,13 @@ local mappings = {
     {
         "n",
         "<leader>du",
-        function()
-            require("dapui").toggle({})
-        end,
+        function() require("dapui").toggle({}) end,
         "Dap UI",
     },
     {
         { "n", "x" },
         "<leader>de",
-        function()
-            require("dapui").eval()
-        end,
+        function() require("dapui").eval() end,
         "Eval",
     },
 
@@ -256,17 +222,13 @@ local mappings = {
     {
         "n",
         "]c",
-        function()
-            require("todo-comments").jump_next()
-        end,
+        function() require("todo-comments").jump_next() end,
         "Next todo comment",
     },
     {
         "n",
         "[c",
-        function()
-            require("todo-comments").jump_prev()
-        end,
+        function() require("todo-comments").jump_prev() end,
         "Previous todo comment",
     },
 }

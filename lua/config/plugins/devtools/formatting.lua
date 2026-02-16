@@ -49,8 +49,11 @@ return {
         })
 
         -- Key mapping for formatting
-        vim.keymap.set({ "n", "v" }, "<leader>fp", function()
-            conform.format(format_opts)
-        end, { desc = "Format file or range (in visual mode)" })
+        vim.keymap.set(
+            { "n", "v" },
+            "<leader>fp",
+            function() conform.format(format_opts) end,
+            { desc = "Format file or range (in visual mode)" }
+        )
     end,
 }
