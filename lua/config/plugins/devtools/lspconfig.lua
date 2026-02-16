@@ -1,6 +1,6 @@
 -- nvim-lspconfig plugin is used to configure the
 -- different lsp servers.
-local lsps = require("custom.tools").lsps
+local lsps = require("custom.tools").auto_enabled_lsps
 return {
     {
         "neovim/nvim-lspconfig",
@@ -35,6 +35,10 @@ return {
                 settings = {
                     ty = {},
                 },
+            })
+
+            lspconfig("html", {
+                filetypes = { "html", "gohtmltmpl" },
             })
 
             lspconfig("powershell_es", {

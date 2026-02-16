@@ -14,7 +14,10 @@ vim.opt.autoindent = true
 
 vim.opt.shell = "bash"
 vim.opt.wrap = false
+
 vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 
 vim.opt.expandtab = false
 vim.opt.tabstop = 4

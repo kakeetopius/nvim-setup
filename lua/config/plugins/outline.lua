@@ -1,3 +1,4 @@
+-- Plugin for lsp symbol outlines
 return {
     {
         "hedyhli/outline.nvim",
