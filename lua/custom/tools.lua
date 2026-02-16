@@ -14,10 +14,9 @@ local lsps = {
     { "mesonlsp" },
     { "bashls" },
     { "powershell_es" },
-    { "rust_analyzer", auto_enable = false }, -- will be enabled by rustaceanvim plugin
+    { "rust_analyzer", enable = false }, -- will be enabled by rustaceanvim plugin
     { "kotlin_language_server" },
-    { "docker-compose-language-service" },
-    { "yaml-language-server" },
+    { "docker_compose_language_service" },
 }
 
 M.daps = {
@@ -33,20 +32,32 @@ M.formatters = {
     "stylua",
 }
 
-M.auto_enabled_lsps = {} -- lsps that will be enabled via vim.lsp.enable
-local all_tools = {} -- names of all dev tools. To be used for installation purposes via MasonToolInstall
-
-for _, lsp in ipairs(lsps) do
-    table.insert(all_tools, lsp[1])
-    if lsp.auto_enable ~= nil and not lsp.auto_enable then
-        goto continue
+-- names of all dev tools. To be used for installation purposes via MasonToolInstall
+local function get_all_tools()
+    local all_tools = {}
+    for _, lsp in ipairs(lsps) do
+        table.insert(all_tools, lsp[1])
     end
-    table.insert(M.auto_enabled_lsps, lsp[1])
-    ::continue::
+
+    vim.list_extend(all_tools, M.daps)
+    vim.list_extend(all_tools, M.formatters)
+    return all_tools
 end
 
-vim.list_extend(all_tools, M.daps)
-vim.list_extend(all_tools, M.formatters)
+-- names of enabled_lsps only
+local function get_enabled_lsps()
+    local enabled_lsps = {}
+    for _, lsp in ipairs(lsps) do
+        if lsp.enable ~= nil and not lsp.enable then
+            goto continue
+        end
+        table.insert(enabled_lsps, lsp[1])
+        ::continue::
+    end
+    return enabled_lsps
+end
 
-M.all = all_tools
+M.enabled_lsps = get_enabled_lsps
+M.all = get_all_tools
+
 return M

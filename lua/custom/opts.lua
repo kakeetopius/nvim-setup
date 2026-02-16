@@ -25,3 +25,4 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
 vim.opt.cursorline = false
+vim.opt.virtualedit = "all"

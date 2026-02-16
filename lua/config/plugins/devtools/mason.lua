@@ -23,7 +23,7 @@ return {
 
         config = function()
             require("mason-tool-installer").setup({
-                ensure_installed = require("custom.tools").all,
+                ensure_installed = require("custom.tools").all(),
                 auto_update = false,
                 run_on_start = false,
             })
