@@ -1,5 +1,4 @@
--- KEYMAP TABLE
--- Format:
+-- KEYMAP TABLE Format:
 -- { mode, lhs, rhs, description }
 
 local mappings = {
@@ -10,6 +9,10 @@ local mappings = {
     { "i", "<C-l>", "<Right>", "move right" },
     { "i", "<C-j>", "<Down>", "move down" },
     { "i", "<C-k>", "<Up>", "move up" },
+
+    -- QUICKFIXLIST
+    { "n", "]q", "<cmd>cnext<CR>", "go to next item in quickfix list" },
+    { "n", "[q", "<cmd>cprev<CR>", "go to previous item in quickfix list" },
 
     -- TMUX HOME / END FIX
     { "n", "<Find>", "^", "" },
@@ -39,10 +42,10 @@ local mappings = {
     { "t", "<C-Space>", [[<C-\><C-n>]], "Go to normal mode from terminal mode" },
 
     -- BUFFER MANAGEMENT (barbar)
-    { "n", "<A-l>", "<Cmd>BufferPrevious<CR>", "" },
-    { "n", "<A-k>", "<Cmd>BufferNext<CR>", "" },
-    { "n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", "" },
-    { "n", "<A->>", "<Cmd>BufferMoveNext<CR>", "" },
+    { "n", "<A-l>", "<Cmd>BufferPrevious<CR>", "Go to Previous Buffer" },
+    { "n", "<A-k>", "<Cmd>BufferNext<CR>", "Go to Next Buffer" },
+    { "n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", "Move the Buffer to the left." },
+    { "n", "<A->>", "<Cmd>BufferMoveNext<CR>", "Move the Buffer to the right" },
 
     { "n", "<M-1>", "<Cmd>BufferGoto 1<CR>", "Go to Buffer 1" },
     { "n", "<M-2>", "<Cmd>BufferGoto 2<CR>", "Go to Buffer 2" },
@@ -55,24 +58,24 @@ local mappings = {
     { "n", "<M-9>", "<Cmd>BufferGoto 9<CR>", "Go to Buffer 9" },
     { "n", "<M-0>", "<Cmd>BufferLast<CR>", "Go to last buffer." },
 
-    { "n", "<A-p>", "<Cmd>BufferPin<CR>", "" },
-    { "n", "<A-c>", "<Cmd>BufferClose<CR>", "" },
-    { "n", "<A-q>", "<Cmd>BufferPick<CR>", "" },
+    { "n", "<A-p>", "<Cmd>BufferPin<CR>", "Pin the current buffer" },
+    { "n", "<A-c>", "<Cmd>BufferClose<CR>", "Close the current buffer" },
+    { "n", "<A-q>", "<Cmd>BufferPick<CR>", "Toggle buffer picker" },
 
     -- TAB MANAGEMENT
     { "n", "<Leader>tn", ":tabnew<CR>", "Open a new tab" },
     { "n", "<Leader>tc", ":tabclose<CR>", "Close tab" },
 
     -- TELEKASTEN (Markdown)
-    { "n", "<leader>zp", "<cmd>Telekasten panel<CR>", "" },
-    { "n", "<leader>zf", "<cmd>Telekasten find_notes<CR>", "" },
-    { "n", "<leader>zg", "<cmd>Telekasten search_notes<CR>", "" },
-    { "n", "<leader>zd", "<cmd>Telekasten goto_today<CR>", "" },
-    { "n", "<leader>zz", "<cmd>Telekasten follow_link<CR>", "" },
-    { "n", "<leader>zn", "<cmd>Telekasten new_note<CR>", "" },
-    { "n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>", "" },
-    { "n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>", "" },
-    { "n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>", "" },
+    { "n", "<leader>zp", "<cmd>Telekasten panel<CR>", "Toggle Telekasten panel" },
+    { "n", "<leader>zf", "<cmd>Telekasten find_notes<CR>", "Find Telekasten notes" },
+    { "n", "<leader>zg", "<cmd>Telekasten search_notes<CR>", "Search Telekasten notes" },
+    { "n", "<leader>zd", "<cmd>Telekasten goto_today<CR>", "Go to Today's notes." },
+    { "n", "<leader>zz", "<cmd>Telekasten follow_link<CR>", "Telekasten follow link" },
+    { "n", "<leader>zn", "<cmd>Telekasten new_note<CR>", "Create new Telekasten note" },
+    { "n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>", "Show calender" },
+    { "n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>", "Telekasten show back links" },
+    { "n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>", "Telekasten insert image" },
 
     -- MARK MANAGEMENT
     { "n", "<leader>dM", ":delmarks a-z<CR>", "Clear local marks" },
