@@ -234,6 +234,8 @@ local mappings = {
         function() require("todo-comments").jump_prev() end,
         "Previous todo comment",
     },
+
+    -- OTHERS
 }
 
 for _, map_def in ipairs(mappings) do

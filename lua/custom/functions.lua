@@ -15,17 +15,13 @@ vim.api.nvim_create_autocmd("CursorHold", {
 -- Make nvim recognise some files as shell
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { ".bashrc", ".bash_profile", ".zshrc", ".zprofile", ".profile" },
-    callback = function()
-        vim.bo.filetype = "sh"
-    end,
+    callback = function() vim.bo.filetype = "sh" end,
 })
 
 -- Recongise telekasten files as markdown files.
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "telekasten",
-    callback = function()
-        vim.bo.filetype = "markdown"
-    end,
+    callback = function() vim.bo.filetype = "markdown" end,
 })
 
 -- Auto format before saving file
@@ -45,9 +41,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Enable inlay hints when LSP attaches
 vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function()
-        vim.lsp.inlay_hint.enable()
-    end,
+    callback = function() vim.lsp.inlay_hint.enable() end,
 })
 
 vim.diagnostic.config({
