@@ -48,9 +48,7 @@ end
 local function get_enabled_lsps()
     local enabled_lsps = {}
     for _, lsp in ipairs(lsps) do
-        if lsp.enable ~= nil and not lsp.enable then
-            goto continue
-        end
+        if lsp.enable ~= nil and not lsp.enable then goto continue end
         table.insert(enabled_lsps, lsp[1])
         ::continue::
     end
