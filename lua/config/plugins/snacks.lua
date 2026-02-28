@@ -174,6 +174,11 @@ return {
             desc = "Git Branches",
         },
         {
+            "<leader>gu",
+            function() Snacks.git.blame_line() end,
+            desc = "Git blame for current line",
+        },
+        {
             "<leader>gl",
             function() Snacks.picker.git_log() end,
             desc = "Git Log",
@@ -397,11 +402,6 @@ return {
             desc = "Lazygit",
         },
         {
-            "<leader>un",
-            function() Snacks.notifier.hide() end,
-            desc = "Dismiss All Notifications",
-        },
-        {
             "<c-/>",
             function() Snacks.terminal() end,
             desc = "Toggle Terminal",
@@ -464,10 +464,17 @@ return {
                 Snacks.toggle.treesitter():map("<leader>uT")
                 Snacks.toggle
                     .option("background", { off = "light", on = "dark", name = "Dark Background" })
-                    :map("<leader>ub")
+                    :map("<leader>uB")
                 Snacks.toggle.inlay_hints():map("<leader>uh")
                 Snacks.toggle.indent():map("<leader>ug")
                 Snacks.toggle.dim():map("<leader>uD")
+                Snacks.toggle
+                    .new({
+                        name = "Git Blame inlays",
+                        get = function() return require("gitsigns.config").config.current_line_blame end,
+                        set = function(state) require("gitsigns").toggle_current_line_blame(state) end,
+                    })
+                    :map("<leader>ub")
             end,
         })
     end,

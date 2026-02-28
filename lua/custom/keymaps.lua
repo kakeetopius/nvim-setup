@@ -235,7 +235,8 @@ local mappings = {
         "Previous todo comment",
     },
 
-    -- OTHERS
+    --GIT
+    { "n", "<leader>gU", "<cmd>Gitsigns blame<CR>", "Open Git blame window" },
 }
 
 for _, map_def in ipairs(mappings) do

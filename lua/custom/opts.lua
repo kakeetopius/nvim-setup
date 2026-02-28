@@ -24,6 +24,6 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
