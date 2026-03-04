@@ -23,7 +23,7 @@ local mappings = {
     { "v", "<Select>", "$", "" },
 
     -- LSP
-    { { "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Show available code actions" },
+    { { "n", "v" }, "<leader>caa", vim.lsp.buf.code_action, "Show available code actions" },
     { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
     { "n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
     { "n", "K", vim.lsp.buf.hover, "Show documentation for what is under cursor" },
@@ -42,7 +42,7 @@ local mappings = {
     { "t", "<C-Space>", [[<C-\><C-n>]], "Go to normal mode from terminal mode" },
 
     -- BUFFER MANAGEMENT (barbar)
-    { "n", "<A-l>", "<Cmd>BufferPrevious<CR>", "Go to Previous Buffer" },
+    { "n", "<A-j>", "<Cmd>BufferPrevious<CR>", "Go to Previous Buffer" },
     { "n", "<A-k>", "<Cmd>BufferNext<CR>", "Go to Next Buffer" },
     { "n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", "Move the Buffer to the left." },
     { "n", "<A->>", "<Cmd>BufferMoveNext<CR>", "Move the Buffer to the right" },
