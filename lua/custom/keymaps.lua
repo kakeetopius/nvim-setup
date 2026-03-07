@@ -103,67 +103,17 @@ local mappings = {
     -- ========================
     -- DEBUGGING (DAP)
     -- ========================
-    {
-        "n",
-        "<leader>dc",
-        function() require("dap").continue() end,
-        "Run/Continue",
-    },
-    {
-        "n",
-        "<leader>dC",
-        function() require("dap").run_to_cursor() end,
-        "Run to Cursor",
-    },
-
-    {
-        "n",
-        "<leader>do",
-        function() require("dap").step_over() end,
-        "Step Over",
-    },
-    {
-        "n",
-        "<leader>di",
-        function() require("dap").step_into() end,
-        "Step Into",
-    },
-    {
-        "n",
-        "<leader>dO",
-        function() require("dap").step_out() end,
-        "Step Out",
-    },
-    {
-        "n",
-        "<leader>dj",
-        function() require("dap").up() end,
-        "Down",
-    },
-    {
-        "n",
-        "<leader>dk",
-        function() require("dap").down() end,
-        "Up",
-    },
-    {
-        "n",
-        "<leader>db",
-        function() require("dap").toggle_breakpoint() end,
-        "Toggle Breakpoint",
-    },
-    {
-        "n",
-        "<leader>dB",
-        function() require("dap").set_breakpoint() end,
-        "Set Breakpoint",
-    },
-    {
-        "n",
-        "<leader>dt",
-        function() require("dap").terminate() end,
-        "Terminate",
-    },
+    -- stylua:ignore
+    { "n", "<leader>dc", function() require("dap").continue() end, "Run/Continue" },
+    { "n", "<leader>dC", function() require("dap").run_to_cursor() end, "Run to Cursor" },
+    { "n", "<leader>do", function() require("dap").step_over() end, "Step Over" },
+    { "n", "<leader>di", function() require("dap").step_into() end, "Step Into" },
+    { "n", "<leader>dO", function() require("dap").step_out() end, "Step Out" },
+    { "n", "<leader>dj", function() require("dap").up() end, "Down" },
+    { "n", "<leader>dk", function() require("dap").down() end, "Up" },
+    { "n", "<leader>db", function() require("dap").toggle_breakpoint() end, "Toggle Breakpoint" },
+    { "n", "<leader>dB", function() require("dap").set_breakpoint() end, "Set Breakpoint" },
+    { "n", "<leader>dt", function() require("dap").terminate() end, "Terminate" },
     {
         "n",
         "<leader>ds",
@@ -173,30 +123,10 @@ local mappings = {
         end,
         "Session / Scopes",
     },
-    {
-        "n",
-        "<leader>dr",
-        function() require("dap").repl.toggle() end,
-        "Toggle REPL",
-    },
-    {
-        "n",
-        "<Leader>dl",
-        function() require("dap").run_last() end,
-        "Run Last",
-    },
-    {
-        { "n", "v" },
-        "<Leader>dh",
-        function() require("dap.ui.widgets").hover() end,
-        "Hover widgets",
-    },
-    {
-        { "n", "v" },
-        "<Leader>dp",
-        function() require("dap.ui.widgets").preview() end,
-        "Preview widgets",
-    },
+    { "n", "<leader>dr", function() require("dap").repl.toggle() end, "Toggle REPL" },
+    { "n", "<Leader>dl", function() require("dap").run_last() end, "Run Last" },
+    { { "n", "v" }, "<Leader>dh", function() require("dap.ui.widgets").hover() end, "Hover widgets" },
+    { { "n", "v" }, "<Leader>dp", function() require("dap.ui.widgets").preview() end, "Preview widgets" },
     {
         "n",
         "<Leader>df",
@@ -206,34 +136,14 @@ local mappings = {
         end,
         "Debug window with centered float",
     },
-    {
-        "n",
-        "<leader>du",
-        function() require("dapui").toggle({}) end,
-        "Dap UI",
-    },
-    {
-        { "n", "x" },
-        "<leader>de",
-        function() require("dapui").eval() end,
-        "Eval",
-    },
+    { "n", "<leader>du", function() require("dapui").toggle({}) end, "Dap UI" },
+    { { "n", "x" }, "<leader>de", function() require("dapui").eval() end, "Eval" },
 
     -- ========================
     -- TODO COMMENTS
     -- ========================
-    {
-        "n",
-        "]c",
-        function() require("todo-comments").jump_next() end,
-        "Next todo comment",
-    },
-    {
-        "n",
-        "[c",
-        function() require("todo-comments").jump_prev() end,
-        "Previous todo comment",
-    },
+    { "n", "]c", function() require("todo-comments").jump_next() end, "Next todo comment" },
+    { "n", "[c", function() require("todo-comments").jump_prev() end, "Previous todo comment" },
 
     --GIT
     { "n", "<leader>gU", "<cmd>Gitsigns blame<CR>", "Open Git blame window" },

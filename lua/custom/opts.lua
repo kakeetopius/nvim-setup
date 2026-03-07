@@ -27,3 +27,4 @@ vim.opt.shiftwidth = 4
 vim.opt.cursorline = true
 
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.mouse = ""
