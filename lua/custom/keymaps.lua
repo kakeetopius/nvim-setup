@@ -24,7 +24,7 @@ local mappings = {
 
     -- LSP
     { { "n", "v" }, "<leader>caa", vim.lsp.buf.code_action, "Show available code actions" },
-    { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename" },
+    { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename variable" },
     { "n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
     { "n", "K", vim.lsp.buf.hover, "Show documentation for what is under cursor" },
     { "n", "<leader>lr", "<cmd>LspRestart<CR>", "Restart LSP" },
@@ -147,6 +147,15 @@ local mappings = {
 
     --GIT
     { "n", "<leader>gU", "<cmd>Gitsigns blame<CR>", "Open Git blame window" },
+
+    --COPILOT
+    -- from copilot.lua
+    { "n", "<leader>ct", "<cmd>Copilot toggle<CR>", "Toggle Copilot suggestions" },
+    -- From CopilotChat.nvim
+    { "n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", "Toggle Copilot chat window" },
+    { "n", "<leader>cr", "<cmd>CopilotChatReset<CR>", "Reset Copilot chat window" },
+    { "n", "<leader>cm", "<cmd>CopilotChatModels<CR>", "View or select available Copilot models" },
+    { "n", "<leader>cp", "<cmd>CopilotChatPrompts<CR>", "View or select available Copilot prompt templates" },
 }
 
 for _, map_def in ipairs(mappings) do

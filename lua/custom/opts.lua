@@ -29,3 +29,4 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 vim.opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.opt.completeopt = "menu,menuone,preview,noinsert,popup"
