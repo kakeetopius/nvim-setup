@@ -152,10 +152,11 @@ local mappings = {
     -- from copilot.lua
     { "n", "<leader>ct", "<cmd>Copilot toggle<CR>", "Toggle Copilot suggestions" },
     -- From CopilotChat.nvim
-    { "n", "<leader>cc", "<cmd>CopilotChatToggle<CR>", "Toggle Copilot chat window" },
+    { { "n", "v" }, "<leader>cc", "<cmd>CopilotChatToggle<CR>", "Toggle Copilot chat window" },
     { "n", "<leader>cr", "<cmd>CopilotChatReset<CR>", "Reset Copilot chat window" },
-    { "n", "<leader>cm", "<cmd>CopilotChatModels<CR>", "View or select available Copilot models" },
-    { "n", "<leader>cp", "<cmd>CopilotChatPrompts<CR>", "View or select available Copilot prompt templates" },
+    { { "n", "v" }, "<leader>cm", "<cmd>CopilotChatModels<CR>", "View or select available Copilot models" },
+    { { "n", "v" }, "<leader>cp", "<cmd>CopilotChatPrompts<CR>", "View or select available Copilot prompt templates" },
+    { { "n", "v" }, "<leader>cs", "<cmd>CopilotChatStop<CR>", "Stop current output" },
 }
 
 for _, map_def in ipairs(mappings) do
