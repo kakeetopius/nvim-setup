@@ -160,7 +160,7 @@ local mappings = {
 }
 
 for _, map_def in ipairs(mappings) do
-    local mode, lhs, rhs, desc = table.unpack(map_def)
+    local mode, lhs, rhs, desc = map_def[1], map_def[2], map_def[3], map_def[4]
     local opts = { desc = desc or "", noremap = true, silent = true }
 
     vim.keymap.set(mode, lhs, rhs, opts)
