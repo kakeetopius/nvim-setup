@@ -59,3 +59,13 @@ vim.api.nvim_create_autocmd("BufRead", {
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight on Yank",
+    callback = function()
+        vim.hl.on_yank({
+            higroup = "Visual",
+            timeout = 300,
+        })
+    end,
+})

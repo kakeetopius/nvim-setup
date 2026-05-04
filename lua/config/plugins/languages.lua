@@ -16,11 +16,6 @@ return {
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
         },
-        opts = {
-            ai = {
-                enable = true,
-            },
-        },
         build = ':lua require("go.install").update_all_sync()',
     },
 }
