@@ -24,7 +24,7 @@ return {
                 -- html = { "prettier" },
                 json = { "prettier" },
                 lua = { "stylua" },
-                python = { "ruff" },
+                python = { "ruff_format" },
                 markdown = { "prettier" },
                 go = { "gofumpt" },
                 rust = { "rustfmt" },
