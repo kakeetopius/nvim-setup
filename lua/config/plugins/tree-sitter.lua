@@ -5,67 +5,57 @@ return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     build = ":TSUpdate",
-    branch = "main",
+    branch = "master",
     config = function()
-        local ts = require("nvim-treesitter")
-        local parsers = {
-            "bash",
-            "comment",
-            "css",
-            "diff",
-            "dockerfile",
-            "git_config",
-            "gitcommit",
-            "gitignore",
-            "go",
-            "gomod",
-            "gosum",
-            "gotmpl",
-            "html",
-            "http",
-            "java",
-            "javascript",
-            "jsdoc",
-            "json",
-            "json5",
-            "lua",
-            "make",
-            "markdown",
-            "markdown_inline",
-            "python",
-            "regex",
-            "rst",
-            "rust",
-            "ssh_config",
-            "sql",
-            "terraform",
-            "toml",
-            "tsx",
-            "typescript",
-            "vim",
-            "vimdoc",
-            "yaml",
-        }
+        require("nvim-treesitter.configs").setup({
+            ensure_installed = {
+                "bash",
+                "comment",
+                "css",
+                "diff",
+                "dockerfile",
+                "git_config",
+                "gitcommit",
+                "gitignore",
+                "go",
+                "gomod",
+                "gosum",
+                "gotmpl",
+                "html",
+                "http",
+                "java",
+                "javascript",
+                "jsdoc",
+                "json",
+                "json5",
+                "lua",
+                "make",
+                "markdown",
+                "markdown_inline",
+                "python",
+                "regex",
+                "rst",
+                "rust",
+                "ssh_config",
+                "sql",
+                "terraform",
+                "toml",
+                "tsx",
+                "typescript",
+                "vim",
+                "vimdoc",
+                "yaml",
+            },
 
-        for _, parser in ipairs(parsers) do
-            ts.install(parser)
-        end
+            -- Install parsers synchronously (only applied to `ensure_installed`)
+            sync_install = false,
 
-        -- Not every tree-sitter parser is the same as the file type detected
-        -- So the patterns need to be registered more cleverly
-        local patterns = {}
-        for _, parser in ipairs(parsers) do
-            local parser_patterns = vim.treesitter.language.get_filetypes(parser)
-            for _, pp in pairs(parser_patterns) do
-                table.insert(patterns, pp)
-            end
-        end
+            -- Automatically install missing parsers when entering buffer
+            auto_install = true,
 
-        vim.api.nvim_create_autocmd("FileType", {
-            pattern = patterns,
-            callback = function()
-                vim.treesitter.start()
-            end,
+            highlight = {
+                enable = true,
+            },
         })
     end,
 }
