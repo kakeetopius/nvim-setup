@@ -27,6 +27,7 @@ return {
                     "handlebars",
                     "hbs",
                     "gotmpl",
+                    "tmpl",
                     "embedded_template",
                 },
             })
