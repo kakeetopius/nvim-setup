@@ -74,3 +74,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "*.gotexttmpl", "*.gohtmltmpl", "*.gohtml", "*.tmpl" },
     callback = function(args) vim.bo[args.buf].filetype = "html" end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args) pcall(vim.treesitter.start, args.buf) end,
+})
