@@ -8,6 +8,7 @@ return {
         dependencies = {
             "hrsh7th/cmp-buffer", --source for text in buffer
             "hrsh7th/cmp-path", -- source for file system paths
+            "hrsh7th/cmp-nvim-lsp", -- for autocompletion from lsp
             "L3MON4D3/LuaSnip", --snippet engine
             "saadparwaiz1/cmp_luasnip", --for autocompletion
             "rafamadriz/friendly-snippets", --useful snippets
@@ -22,10 +23,6 @@ return {
             require("luasnip.loaders.from_vscode").lazy_load()
 
             cmp.setup({
-                completion = {
-                    completeopt = "menu,menuone,preview,noselect,noinsert,popup",
-                },
-
                 snippet = { --configure how nvim-cmp interacts with snippet engine
                     expand = function(args) luasnip.lsp_expand(args.body) end,
                 },

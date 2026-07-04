@@ -19,6 +19,7 @@ return {
 
             vim.lsp.on_attach = function(client, bufnr)
                 if client.server_capabilities.documentSymbolProvider then
+                    --attach nvim-navic which gets breadcrumbs of different symbols
                     require("nvim-navic").attach(client, bufnr)
                 end
             end

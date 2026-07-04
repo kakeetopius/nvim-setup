@@ -1,7 +1,6 @@
--- noice.lua used for ui elements but only used for cmdline in this configuration
+-- noice.lua used for ui elements
 
 return {
-    -- lazy.nvim
     {
         "folke/noice.nvim",
         event = "VeryLazy",
