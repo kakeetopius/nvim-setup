@@ -1,4 +1,4 @@
-# My Neovim Configuration
+# nvim-setup/
 
 <a href="https://dotfyle.com/kakeetopius/nvim-setup"><img src="https://dotfyle.com/kakeetopius/nvim-setup/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/kakeetopius/nvim-setup"><img src="https://dotfyle.com/kakeetopius/nvim-setup/badges/leaderkey?style=flat" /></a>
@@ -11,7 +11,7 @@
 Clone the repository and install the plugins:
 
 ```sh
-git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
+git clone git@github.com:kakeetopius/nvim-setup ~/.config/nvim
 ```
 
 ## Plugins
@@ -23,25 +23,25 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 ### colorscheme
 
-- [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
-- [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
 - [navarasu/onedark.nvim](https://dotfyle.com/plugins/navarasu/onedark.nvim)
 - [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
+- [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
 
 ### comment
 
-- [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 - [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
+- [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 
 ### completion
 
 - [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
+- [zbirenbaum/copilot.lua](https://dotfyle.com/plugins/zbirenbaum/copilot.lua)
 
 ### debugging
 
 - [theHamsta/nvim-dap-virtual-text](https://dotfyle.com/plugins/theHamsta/nvim-dap-virtual-text)
-- [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 - [rcarriga/nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
+- [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 
 ### diagnostics
 
@@ -49,8 +49,8 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 ### editing-support
 
-- [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
 - [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
+- [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
 - [folke/snacks.nvim](https://dotfyle.com/plugins/folke/snacks.nvim)
 
 ### file-explorer
@@ -79,15 +79,14 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 ### keybinding
 
-- [max397574/better-escape.nvim](https://dotfyle.com/plugins/max397574/better-escape.nvim)
 - [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
 
 ### lsp
 
-- [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
-- [mrcjkb/rustaceanvim](https://dotfyle.com/plugins/mrcjkb/rustaceanvim)
-- [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 - [hedyhli/outline.nvim](https://dotfyle.com/plugins/hedyhli/outline.nvim)
+- [mrcjkb/rustaceanvim](https://dotfyle.com/plugins/mrcjkb/rustaceanvim)
+- [ray-x/lsp_signature.nvim](https://dotfyle.com/plugins/ray-x/lsp_signature.nvim)
+- [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 
 ### lsp-installer
 
@@ -97,14 +96,18 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 - [MeanderingProgrammer/render-markdown.nvim](https://dotfyle.com/plugins/MeanderingProgrammer/render-markdown.nvim)
 
+### motion
+
+- [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
+
 ### note-taking
 
 - [renerocksai/telekasten.nvim](https://dotfyle.com/plugins/renerocksai/telekasten.nvim)
 
 ### nvim-dev
 
-- [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 - [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
+- [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 - [ray-x/guihua.lua](https://dotfyle.com/plugins/ray-x/guihua.lua)
 
 ### plugin-manager
@@ -117,8 +120,8 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 ### snippet
 
-- [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 - [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
+- [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 
 ### statusline
 
@@ -134,13 +137,12 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 
 ### utility
 
-- [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
 - [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
-- [code-biscuits/nvim-biscuits](https://dotfyle.com/plugins/code-biscuits/nvim-biscuits)
+- [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
 
 ## Language Servers
 
-- astro
+- ty
 - bashls
 - clangd
 - cssls
@@ -149,11 +151,10 @@ git clone https://github.com/kakeetopius/nvim-setup.git ~/.config/$USER/nvim
 - gopls
 - html
 - intelephense
-- kotlin_language_server
 - lua_ls
 - powershell_es
 - rust_analyzer
-- svelte
 - yamlls
+- buf_ls
 
 This readme was generated by [Dotfyle](https://dotfyle.com)
