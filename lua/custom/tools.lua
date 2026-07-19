@@ -3,7 +3,6 @@ local M = {}
 local lsps = {
     { "ty" },
     { "clangd" },
-    { "ts_ls" },
     { "lua_ls" },
     { "intelephense" },
     { "gopls" },
@@ -15,8 +14,8 @@ local lsps = {
     { "bashls" },
     { "powershell_es" },
     { "rust_analyzer", enable = false }, -- will be enabled by rustaceanvim plugin
-    { "kotlin_language_server" },
     { "docker_compose_language_service" },
+    { "buf_ls" },
 }
 
 M.daps = {

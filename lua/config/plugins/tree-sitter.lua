@@ -43,6 +43,7 @@ return {
             "vim",
             "vimdoc",
             "yaml",
+            "proto",
         })
     end,
 }

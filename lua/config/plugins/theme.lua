@@ -9,13 +9,6 @@ return {
         config = function() vim.cmd.colorscheme("tokyonight-night") end,
     },
     {
-        "rebelot/kanagawa.nvim",
-        -- config = function()
-        --     vim.cmd.colorscheme("kanagawa")
-        -- end,
-    },
-
-    {
         "catppuccin/nvim",
         name = "catppuccin",
         -- config = function()
@@ -29,7 +22,7 @@ return {
         -- priority = 1000, -- make sure to load this before all the other start plugins
         -- config = function()
         --     require("onedark").setup({
-        --         style = "deep",
+        --         style = "darker",
         --     })
         --     require("onedark").load()
         -- end,
