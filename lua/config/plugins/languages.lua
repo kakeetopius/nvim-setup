@@ -17,5 +17,6 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
         build = ':lua require("go.install").update_all_sync()',
+        opts = {},
     },
 }
