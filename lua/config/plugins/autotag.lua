@@ -26,7 +26,6 @@ return {
                     "glimmer",
                     "handlebars",
                     "hbs",
-                    "gotmpl",
                     "tmpl",
                     "embedded_template",
                 },

@@ -10,12 +10,12 @@ local lsps = {
     { "html" },
     { "cssls" },
     { "dockerls" },
-    { "mesonlsp" },
     { "bashls" },
     { "powershell_es" },
     { "rust_analyzer", enable = false }, -- will be enabled by rustaceanvim plugin
     { "docker_compose_language_service" },
     { "buf_ls" },
+    { "svelte" },
 }
 
 M.daps = {
@@ -34,10 +34,7 @@ M.formatters = {
 -- names of all dev tools. To be used for installation purposes via MasonToolInstall
 local function get_all_tools()
     local all_tools = {}
-    for _, lsp in ipairs(lsps) do
-        table.insert(all_tools, lsp[1])
-    end
-
+    vim.list_extend(all_tools, lsps)
     vim.list_extend(all_tools, M.daps)
     vim.list_extend(all_tools, M.formatters)
     return all_tools

@@ -39,7 +39,7 @@ return {
             })
 
             lspconfig("html", {
-                filetypes = { "html", "gohtmltmpl", "gotexttmpl" },
+                filetypes = { "html", "htmltmpl" },
             })
 
             lspconfig("powershell_es", {

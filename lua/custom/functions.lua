@@ -46,11 +46,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Open Troubles Quickfix when the qf list opens
 vim.api.nvim_create_autocmd("BufRead", {
-    callback = function(ev)
-        if vim.bo[ev.buf].buftype == "quickfix" then
+    callback = function(args)
+        if vim.bo[args.buf].buftype == "quickfix" then
             vim.schedule(function()
-                vim.cmd([[cclose]])
-                vim.cmd([[Trouble qflist open]])
+                vim.cmd("cclose")
+                vim.cmd("Trouble qflist open")
             end)
         end
     end,
@@ -60,6 +60,7 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+-- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight on Yank",
     callback = function()
@@ -70,11 +71,35 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Make nvim recognise some files as html
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = { "*.gotexttmpl", "*.gohtmltmpl", "*.gohtml", "*.tmpl" },
+    pattern = { "*.html.tmpl", "*.tmpl" },
     callback = function(args) vim.bo[args.buf].filetype = "html" end,
 })
 
+-- Start treesitter for all filetypes that have a parser installed
 vim.api.nvim_create_autocmd("FileType", {
     callback = function(args) pcall(vim.treesitter.start, args.buf) end,
+})
+
+-- Command to get lsp info
+vim.api.nvim_create_user_command("LspInfo", function() vim.cmd("checkhealth vim.lsp") end, {
+    desc = "Show LSP Information",
+})
+
+-- Command to open help in a vertical split
+vim.api.nvim_create_user_command("Help", function()
+    local topic = vim.fn.input({
+        prompt = "Help For: ",
+        completion = "help",
+    })
+    if topic ~= nil then vim.cmd("vertical help " .. vim.fn.fnameescape(topic)) end
+end, {
+    desc = "Open help in a vertical split",
+})
+
+-- Open help in a vertical split when using the :help command
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "help",
+    callback = function() vim.cmd("wincmd L") end,
 })

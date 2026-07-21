@@ -14,7 +14,7 @@ local mappings = {
     { "n", "]q", "<cmd>cnext<CR>", "go to next item in quickfix list" },
     { "n", "[q", "<cmd>cprev<CR>", "go to previous item in quickfix list" },
 
-    -- TMUX HOME / END FIX
+    -- TMUX HOME / END FIX (Tmux sends some weird stuff when the Home key or End key is pressed. The following fixes it)
     { "n", "<Find>", "^", "" },
     { "n", "<Select>", "$", "" },
     { "i", "<Find>", "<C-o>^", "" },
@@ -27,7 +27,7 @@ local mappings = {
     { "n", "<leader>rn", vim.lsp.buf.rename, "Smart rename variable" },
     { "n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", "Show buffer diagnostics" },
     { "n", "K", vim.lsp.buf.hover, "Show documentation for what is under cursor" },
-    { "n", "<leader>lr", "<cmd>LspRestart<CR>", "Restart LSP" },
+    { "n", "<leader>li", ":checkhealth vim.lsp<CR>", "Show LSP Information" },
 
     -- FILE EXPLORER
     { "n", "<leader>e", "<cmd>Neotree left toggle<CR>", "Toogle File Explorer" },
@@ -100,9 +100,7 @@ local mappings = {
         "Dismiss notifications",
     },
 
-    -- ========================
     -- DEBUGGING (DAP)
-    -- ========================
     -- stylua:ignore
     { "n", "<leader>dc", function() require("dap").continue() end, "Run/Continue" },
     { "n", "<leader>dC", function() require("dap").run_to_cursor() end, "Run to Cursor" },
@@ -139,9 +137,7 @@ local mappings = {
     { "n", "<leader>du", function() require("dapui").toggle({}) end, "Dap UI" },
     { { "n", "x" }, "<leader>de", function() require("dapui").eval() end, "Eval" },
 
-    -- ========================
     -- TODO COMMENTS
-    -- ========================
     { "n", "]c", function() require("todo-comments").jump_next() end, "Next todo comment" },
     { "n", "[c", function() require("todo-comments").jump_prev() end, "Previous todo comment" },
 
@@ -157,6 +153,17 @@ local mappings = {
     { { "n", "v" }, "<leader>cm", "<cmd>CopilotChatModels<CR>", "View or select available Copilot models" },
     { { "n", "v" }, "<leader>cp", "<cmd>CopilotChatPrompts<CR>", "View or select available Copilot prompt templates" },
     { { "n", "v" }, "<leader>cs", "<cmd>CopilotChatStop<CR>", "Stop current output" },
+
+    -- Window Management
+    { "n", "<leader>wl", "<C-w>L", "Move the window far right." },
+    { "n", "<leader>wh", "<C-w>H", "Move the window far left." },
+    { "n", "<leader>wj", "<C-w>J", "Move the window to bottom." },
+    { "n", "<leader>wk", "<C-w>K", "Move the window to top." },
+    { "n", "<leader>wc", "<C-w>q", "Close the current window" },
+    { "n", "<leader>wo", "<C-w>o", "Close all other windows" },
+
+    -- OTHERS
+    { "n", "<leader>hh", ":Help<CR>", "Get Help for something and open help window in a vertical split" },
 }
 
 for _, map_def in ipairs(mappings) do
