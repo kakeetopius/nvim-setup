@@ -4,22 +4,22 @@ return {
     cmd = "Trouble",
     keys = {
         {
-            "<leader>xx",
+            "<leader>qx",
             "<cmd>Trouble diagnostics toggle<cr>",
             desc = "Diagnostics (Trouble)",
         },
         {
-            "<leader>xX",
+            "<leader>qX",
             "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
             desc = "Buffer Diagnostics (Trouble)",
         },
         {
-            "<leader>xl",
+            "<leader>ql",
             "<cmd>Trouble loclist toggle<cr>",
             desc = "Location List (Trouble)",
         },
         {
-            "<leader>xq",
+            "<leader>qq",
             "<cmd>Trouble qflist toggle<cr>",
             desc = "Quickfix List (Trouble)",
         },

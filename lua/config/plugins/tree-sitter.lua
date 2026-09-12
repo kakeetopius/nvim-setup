@@ -44,6 +44,7 @@ return {
             "vimdoc",
             "yaml",
             "proto",
+            "latex",
         })
     end,
 }
