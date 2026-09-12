@@ -66,17 +66,6 @@ local mappings = {
     { "n", "<Leader>tn", ":tabnew<CR>", "Open a new tab" },
     { "n", "<Leader>tc", ":tabclose<CR>", "Close tab" },
 
-    -- TELEKASTEN (Markdown)
-    { "n", "<leader>zp", "<cmd>Telekasten panel<CR>", "Toggle Telekasten panel" },
-    { "n", "<leader>zf", "<cmd>Telekasten find_notes<CR>", "Find Telekasten notes" },
-    { "n", "<leader>zg", "<cmd>Telekasten search_notes<CR>", "Search Telekasten notes" },
-    { "n", "<leader>zd", "<cmd>Telekasten goto_today<CR>", "Go to Today's notes." },
-    { "n", "<leader>zz", "<cmd>Telekasten follow_link<CR>", "Telekasten follow link" },
-    { "n", "<leader>zn", "<cmd>Telekasten new_note<CR>", "Create new Telekasten note" },
-    { "n", "<leader>zc", "<cmd>Telekasten show_calendar<CR>", "Show calender" },
-    { "n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>", "Telekasten show back links" },
-    { "n", "<leader>zI", "<cmd>Telekasten insert_img_link<CR>", "Telekasten insert image" },
-
     -- MARK MANAGEMENT
     { "n", "<leader>dM", ":delmarks a-z<CR>", "Clear local marks" },
     {

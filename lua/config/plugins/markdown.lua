@@ -2,16 +2,6 @@
 
 return {
     {
-        "renerocksai/telekasten.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-telekasten/calendar-vim" },
-
-        config = function()
-            require("telekasten").setup({
-                home = vim.fn.expand("~/Notes"),
-            })
-        end,
-    },
-    {
 
         "MeanderingProgrammer/render-markdown.nvim",
         ---@module 'render-markdown'

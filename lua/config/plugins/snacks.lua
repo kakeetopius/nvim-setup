@@ -98,8 +98,8 @@ return {
             enabled = true,
             layout = {
                 layout = {
-                    width = 0.17,
-                    height = 0.9,
+                    width = 0.8,
+                    height = 0.95,
                 },
             },
         },
