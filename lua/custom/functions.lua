@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         local format_opts = {
             lsp_fallback = true,
             async = false,
-            timeout_ms = 500,
+            timeout_ms = 1000,
         }
         conform.format(format_opts)
     end,
