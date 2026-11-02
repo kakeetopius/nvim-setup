@@ -16,6 +16,7 @@ local lsps = {
     { "docker_compose_language_service" },
     { "buf_ls" },
     { "svelte" },
+    { "ruby_lsp" },
 }
 
 M.daps = {
@@ -29,6 +30,7 @@ M.formatters = {
     "gofumpt",
     "prettier",
     "stylua",
+    "rubocop",
 }
 
 -- names of all dev tools. To be used for installation purposes via MasonToolInstall

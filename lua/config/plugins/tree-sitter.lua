@@ -45,6 +45,7 @@ return {
             "yaml",
             "proto",
             "latex",
+            "ruby",
         })
     end,
 }

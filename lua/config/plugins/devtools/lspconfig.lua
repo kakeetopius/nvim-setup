@@ -38,6 +38,10 @@ return {
                 },
             })
 
+            lspconfig("ruby_lsp", {
+                root_markers = { "Gemfile", ".git", "Vagrantfile" },
+            })
+
             lspconfig("html", {
                 filetypes = { "html", "htmltmpl" },
             })

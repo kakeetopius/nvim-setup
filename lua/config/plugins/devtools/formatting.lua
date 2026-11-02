@@ -28,6 +28,7 @@ return {
                 markdown = { "prettier" },
                 go = { "gofumpt" },
                 rust = { "rustfmt" },
+                ruby = { "rubocop" },
             },
 
             -- Custom formatter settings
