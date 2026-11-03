@@ -151,10 +151,15 @@ local mappings = {
     { "n", "<leader>wc", "<C-w>q", "Close the current window" },
     { "n", "<leader>wo", "<C-w>o", "Close all other windows" },
 
+    --- Quarto
+    { "n", "<leader>qp", "<cmd>QuartoPreview<cr>", "Quarto Preview." },
+    { "n", "<leader>qc", "<cmd>QuartoClosePreview<cr>", "Quarto Close Preview." },
+    { "n", "<leader>qa", "<cmd>QuartoActivate<cr>", "Quarto Activate." },
+
     -- OTHERS
     { "n", "<leader>hh", ":Help<CR>", "Get Help for something and open help window in a vertical split" },
 }
-
+--
 for _, map_def in ipairs(mappings) do
     local mode, lhs, rhs, desc = map_def[1], map_def[2], map_def[3], map_def[4]
     local opts = { desc = desc or "", noremap = true, silent = true }
