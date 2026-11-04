@@ -158,6 +158,12 @@ local mappings = {
 
     -- OTHERS
     { "n", "<leader>hh", ":Help<CR>", "Get Help for something and open help window in a vertical split" },
+    {
+        "n",
+        "<leader>ft",
+        function() vim.notify('filetype is "' .. vim.bo.filetype .. '"') end,
+        "Get the current buffer filetype",
+    },
 }
 --
 for _, map_def in ipairs(mappings) do

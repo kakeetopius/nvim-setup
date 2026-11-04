@@ -100,10 +100,6 @@ git clone git@github.com:kakeetopius/nvim-setup ~/.config/nvim
 
 - [folke/flash.nvim](https://dotfyle.com/plugins/folke/flash.nvim)
 
-### note-taking
-
-- [renerocksai/telekasten.nvim](https://dotfyle.com/plugins/renerocksai/telekasten.nvim)
-
 ### nvim-dev
 
 - [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
