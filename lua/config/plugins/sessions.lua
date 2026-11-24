@@ -15,6 +15,5 @@ return {
         session_lens = {
             picker = "snacks",
         },
-        -- log_level = 'debug',
     },
 }

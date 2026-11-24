@@ -20,7 +20,6 @@ local lsps = {
     lsp.new("ty"),
     lsp.new("clangd"),
     lsp.new("lua_ls"),
-    lsp.new("intelephense"),
     lsp.new("gopls"),
     lsp.new("yamlls"),
     lsp.new("html"),
@@ -31,8 +30,8 @@ local lsps = {
     lsp.new("rust_analyzer", false), -- will be enabled by rustaceanvim
     lsp.new("docker_compose_language_service"),
     lsp.new("buf_ls"),
-    lsp.new("svelte"),
     lsp.new("ruby_lsp"),
+    lsp.new("fish_lsp"),
 }
 
 function lsps:names()

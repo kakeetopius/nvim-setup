@@ -55,6 +55,7 @@ local mappings = {
     { "n", "<M-6>", "<Cmd>BufferGoto 6<CR>", "Go to Buffer 6" },
     { "n", "<M-7>", "<Cmd>BufferGoto 7<CR>", "Go to Buffer 7" },
     { "n", "<M-8>", "<Cmd>BufferGoto 8<CR>", "Go to Buffer 8" },
+
     { "n", "<M-9>", "<Cmd>BufferGoto 9<CR>", "Go to Buffer 9" },
     { "n", "<M-0>", "<Cmd>BufferLast<CR>", "Go to last buffer." },
 
@@ -164,6 +165,7 @@ local mappings = {
         function() vim.notify('filetype is "' .. vim.bo.filetype .. '"') end,
         "Get the current buffer filetype",
     },
+    { "n", "<leader>uu", function() vim.cmd.Undotree() end, "Toggle Undo Tree UI." },
 }
 --
 for _, map_def in ipairs(mappings) do

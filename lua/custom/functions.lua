@@ -1,5 +1,8 @@
 local augroup = vim.api.nvim_create_augroup("CustomAutocmds", { clear = true })
 
+-- Enable undo tree
+vim.cmd.packadd("nvim.undotree")
+
 -- Show diagnostics on cursor hold
 vim.api.nvim_create_autocmd("CursorHold", {
     group = augroup,
@@ -32,7 +35,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         local format_opts = {
             lsp_fallback = true,
             async = false,
-            timeout_ms = 1000,
+            timeout_ms = 2000,
         }
         conform.format(format_opts)
     end,

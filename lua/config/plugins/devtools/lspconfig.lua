@@ -37,7 +37,7 @@ return {
             })
 
             lspconfig("ruby_lsp", {
-                root_markers = { "Gemfile", ".git", "Vagrantfile" },
+                root_markers = { "Gemfile", ".git", "Vagrantfile", "Rakefile" },
             })
 
             lspconfig("html", {
